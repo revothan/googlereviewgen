@@ -1,0 +1,19 @@
+[build]
+  # Build command for React + Vite
+  command = "npm run build"
+  # Output directory for Vite builds
+  publish = "dist"
+
+# Redirect all requests to index.html for client-side routing
+# This prevents 404 errors when users refresh the page or access routes directly
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Optional: Force HTTPS redirect
+[[redirects]]
+  from = "http://googlereviewgen.netlify.app/*"
+  to = "https://googlereviewgen.netlify.app/:splat"
+  status = 301
+  force = true
