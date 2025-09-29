@@ -141,4 +141,7 @@ PENTING: Tulis dalam format teks biasa tanpa formatting apapun!`;
       await new Promise(resolve => setTimeout(resolve, retryDelay));
     }
   }
+  
+  // This should never be reached due to the throw in the last attempt, but TypeScript requires it
+  throw new Error("REDIRECT_TO_GOOGLE");
 }
